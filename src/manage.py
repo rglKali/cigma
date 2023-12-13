@@ -19,7 +19,7 @@ def schema_command():
     """Executes schema.sql"""
 
     # Read the schema file
-    with open('schema.sql', 'r') as file:
+    with open('src/schema.sql', 'r') as file:
         schema = file.read()
 
     # Establish a connection to the database
