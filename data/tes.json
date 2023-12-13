@@ -1,0 +1,1047 @@
+[
+    {
+        "name": "Aela the Huntress",
+        "types": [
+            " Nord",
+            " Companion",
+            " Archer"
+        ],
+        "attack": 4,
+        "defense": 6,
+        "cost": "bbnvv"
+    },
+    {
+        "name": "Dragonborn",
+        "types": [
+            " Nord",
+            " Shout",
+            " Hero"
+        ],
+        "attack": 7,
+        "defense": 5,
+        "cost": "bbbjnrrv"
+    },
+    {
+        "name": "Serana",
+        "types": [
+            " Vampire",
+            " Necromancer"
+        ],
+        "attack": 3,
+        "defense": 7,
+        "cost": "bjnrrv"
+    },
+    {
+        "name": "J'zargo",
+        "types": [
+            " Khajiit",
+            " Mage",
+            " Destruction"
+        ],
+        "attack": 5,
+        "defense": 4,
+        "cost": "jrrv"
+    },
+    {
+        "name": "Ulfric Stormcloak",
+        "types": [
+            " Nord",
+            " Leader"
+        ],
+        "attack": 6,
+        "defense": 6,
+        "cost": "jjnnrvv"
+    },
+    {
+        "name": "Miraak, the Traitor",
+        "types": [
+            " Dragon Priest",
+            " Betrayer"
+        ],
+        "attack": 8,
+        "defense": 8,
+        "cost": "bbjjnrvvvv"
+    },
+    {
+        "name": "Brynjolf",
+        "types": [
+            " Nord",
+            " Thief",
+            " Guild Master"
+        ],
+        "attack": 3,
+        "defense": 5,
+        "cost": "vvv"
+    },
+    {
+        "name": "Vilkas & Farkas",
+        "types": [
+            " Nord",
+            " Companions",
+            " Brothers"
+        ],
+        "attack": 6,
+        "defense": 7,
+        "cost": "brrrrrr"
+    },
+    {
+        "name": "Paarthurnax",
+        "types": [
+            " Dragon",
+            " Wise"
+        ],
+        "attack": 5,
+        "defense": 10,
+        "cost": "bbjjnrrvv"
+    },
+    {
+        "name": "Sheogorath, Daedric Prince of Madness",
+        "types": [
+            " Daedra",
+            " Madgod"
+        ],
+        "attack": 9,
+        "defense": 4,
+        "cost": "bbbjjnnnrv"
+    },
+    {
+        "name": "Karliah",
+        "types": [
+            " Nord",
+            " Nightingale",
+            " Assassin"
+        ],
+        "attack": 4,
+        "defense": 3,
+        "cost": "bnvv"
+    },
+    {
+        "name": "Odahviing",
+        "types": [
+            " Dragon",
+            " Flame Atronach"
+        ],
+        "attack": 8,
+        "defense": 9,
+        "cost": "bbjjjnnrvv"
+    },
+    {
+        "name": "Cicero",
+        "types": [
+            " Imperial",
+            " Jester",
+            " Assassin"
+        ],
+        "attack": 3,
+        "defense": 6,
+        "cost": "jjjj"
+    },
+    {
+        "name": "Ancano",
+        "types": [
+            " High Elf",
+            " Mage",
+            " Destruction"
+        ],
+        "attack": 6,
+        "defense": 5,
+        "cost": "jjjnrv"
+    },
+    {
+        "name": "Delphine",
+        "types": [
+            " Nord",
+            " Blade",
+            " Agent"
+        ],
+        "attack": 5,
+        "defense": 4,
+        "cost": "bbbbn"
+    },
+    {
+        "name": "Teldryn Sero",
+        "types": [
+            " Dark Elf",
+            " Mercenary",
+            " Spellsword"
+        ],
+        "attack": 5,
+        "defense": 6,
+        "cost": "bjnrrv"
+    },
+    {
+        "name": "Harkon",
+        "types": [
+            " Vampire Lord",
+            " Master"
+        ],
+        "attack": 7,
+        "defense": 7,
+        "cost": "jnrrrrrv"
+    },
+    {
+        "name": "General Tullius",
+        "types": [
+            " Imperial",
+            " Legion",
+            " Commander"
+        ],
+        "attack": 6,
+        "defense": 8,
+        "cost": "bnrrrrr"
+    },
+    {
+        "name": "Vivec",
+        "types": [
+            " God",
+            " Tribunal",
+            " Guardian"
+        ],
+        "attack": 9,
+        "defense": 9,
+        "cost": "bjjnnnnnrv"
+    },
+    {
+        "name": "Gallus Desidenius",
+        "types": [
+            " Imperial",
+            " Nightingale",
+            " Mentor"
+        ],
+        "attack": 4,
+        "defense": 5,
+        "cost": "bnrr"
+    },
+    {
+        "name": "Sanguine, Daedric Prince of Debauchery",
+        "types": [
+            " Daedra",
+            " Hedonist"
+        ],
+        "attack": 6,
+        "defense": 3,
+        "cost": "bbjnnr"
+    },
+    {
+        "name": "Erandur",
+        "types": [
+            " Dark Elf",
+            " Priest of Mara"
+        ],
+        "attack": 3,
+        "defense": 7,
+        "cost": "bnnnv"
+    },
+    {
+        "name": "Lydia",
+        "types": [
+            " Nord",
+            " Housecarl",
+            " Protector"
+        ],
+        "attack": 2,
+        "defense": 8,
+        "cost": "bbjn"
+    },
+    {
+        "name": "Molag Bal",
+        "types": [
+            " Daedric Prince of Domination"
+        ],
+        "attack": 10,
+        "defense": 10,
+        "cost": "bjjjjnnnrrrv"
+    },
+    {
+        "name": "Isran",
+        "types": [
+            " Nord",
+            " Vampire Hunter",
+            " Dawnguard"
+        ],
+        "attack": 5,
+        "defense": 6,
+        "cost": "bjnrvv"
+    },
+    {
+        "name": "Ezio the Assassin",
+        "types": [
+            " Breton",
+            " Assassin",
+            " Nightingale"
+        ],
+        "attack": 7,
+        "defense": 4,
+        "cost": "bjnnrrv"
+    },
+    {
+        "name": "Mephala, Daedric Prince of Secrets",
+        "types": [
+            " Daedra",
+            " Manipulator"
+        ],
+        "attack": 8,
+        "defense": 3,
+        "cost": "bnrvvvvv"
+    },
+    {
+        "name": "Nocturnal, Daedric Prince of Night",
+        "types": [
+            " Daedra",
+            " Shadow"
+        ],
+        "attack": 5,
+        "defense": 7,
+        "cost": "bbjnrrv"
+    },
+    {
+        "name": "Kodlak Whitemane",
+        "types": [
+            " Nord",
+            " Companions",
+            " Harbinger"
+        ],
+        "attack": 4,
+        "defense": 9,
+        "cost": "bjnnnrvv"
+    },
+    {
+        "name": "Molag Grunda",
+        "types": [
+            " Daedra",
+            " Ogrim"
+        ],
+        "attack": 7,
+        "defense": 8,
+        "cost": "bbbbjjnrv"
+    },
+    {
+        "name": "Nazeem",
+        "types": [
+            " Redguard",
+            " Noble",
+            " Annoying"
+        ],
+        "attack": 2,
+        "defense": 2,
+        "cost": "vv"
+    },
+    {
+        "name": "Farkas",
+        "types": [
+            " Nord",
+            " Companions",
+            " Brother"
+        ],
+        "attack": 6,
+        "defense": 7,
+        "cost": "bbjjnrv"
+    },
+    {
+        "name": "Astrid",
+        "types": [
+            " Nord",
+            " Assassin",
+            " Dark Brotherhood"
+        ],
+        "attack": 5,
+        "defense": 4,
+        "cost": "jjjjjr"
+    },
+    {
+        "name": "Atronach Stone",
+        "types": [
+            " Mundus Stone",
+            " Mage Stone"
+        ],
+        "attack": 0,
+        "defense": 0,
+        "cost": "bbnn"
+    },
+    {
+        "name": "Septimus Signus",
+        "types": [
+            " Nord",
+            " Scholar",
+            " Hermit"
+        ],
+        "attack": 2,
+        "defense": 3,
+        "cost": "nnv"
+    },
+    {
+        "name": "Madanach, King in Rags",
+        "types": [
+            " Reachman",
+            " Forsworn",
+            " Rebel"
+        ],
+        "attack": 7,
+        "defense": 5,
+        "cost": "bbbbjnrv"
+    },
+    {
+        "name": "Mjoll the Lioness",
+        "types": [
+            " Nord",
+            " Warrior",
+            " Avenger"
+        ],
+        "attack": 4,
+        "defense": 8,
+        "cost": "bbbjjjn"
+    },
+    {
+        "name": "Sanguine Rose",
+        "types": [
+            " Daedric Artifact",
+            " Summoning"
+        ],
+        "attack": 0,
+        "defense": 0,
+        "cost": "nnrrr"
+    },
+    {
+        "name": "Lucien Lachance",
+        "types": [
+            " Breton",
+            " Assassin",
+            " Dark Brotherhood"
+        ],
+        "attack": 3,
+        "defense": 4,
+        "cost": "nnnn"
+    },
+    {
+        "name": "Riften Jailor",
+        "types": [
+            " Nord",
+            " Guard",
+            " Lawful"
+        ],
+        "attack": 1,
+        "defense": 5,
+        "cost": "bjv"
+    },
+    {
+        "name": "The Ebony Warrior",
+        "types": [
+            " Redguard",
+            " Warrior",
+            " Challenge"
+        ],
+        "attack": 10,
+        "defense": 10,
+        "cost": "bjnrrrrrrrrr"
+    },
+    {
+        "name": "Neloth",
+        "types": [
+            " Dark Elf",
+            " Telvanni",
+            " Wizard"
+        ],
+        "attack": 6,
+        "defense": 6,
+        "cost": "bbrrrvvv"
+    },
+    {
+        "name": "Barbas",
+        "types": [
+            " Daedric Hound",
+            " Companion"
+        ],
+        "attack": 3,
+        "defense": 3,
+        "cost": "rrvv"
+    },
+    {
+        "name": "Sinding",
+        "types": [
+            " Nord",
+            " Werewolf",
+            " Cursed"
+        ],
+        "attack": 7,
+        "defense": 3,
+        "cost": "bnnnnr"
+    },
+    {
+        "name": "Alduin",
+        "types": [
+            " Dragon",
+            " World-Eater"
+        ],
+        "attack": 9,
+        "defense": 9,
+        "cost": "bbbjnnnnrv"
+    },
+    {
+        "name": "Clavicus Vile, Daedric Prince of Wishes",
+        "types": [
+            " Daedra",
+            " Trickster"
+        ],
+        "attack": 7,
+        "defense": 6,
+        "cost": "bbjnrrrv"
+    },
+    {
+        "name": "Karliah's Bow",
+        "types": [
+            " Weapon",
+            " Nightingale",
+            " Legendary"
+        ],
+        "attack": 3,
+        "defense": 0,
+        "cost": "bjnrr"
+    },
+    {
+        "name": "Galmar Stone-Fist",
+        "types": [
+            " Nord",
+            " Stormcloak",
+            " Commander"
+        ],
+        "attack": 5,
+        "defense": 7,
+        "cost": "nrrrrr"
+    },
+    {
+        "name": "Mannimarco",
+        "types": [
+            " High Elf",
+            " Necromancer",
+            " King of Worms"
+        ],
+        "attack": 8,
+        "defense": 5,
+        "cost": "jnrrrrvvv"
+    },
+    {
+        "name": "Jyggalag, Daedric Prince of Order",
+        "types": [
+            " Daedra",
+            " Orderly"
+        ],
+        "attack": 9,
+        "defense": 9,
+        "cost": "bjjnnrrrrvv"
+    },
+    {
+        "name": "Thalmor Justiciar",
+        "types": [
+            " High Elf",
+            " Thalmor",
+            " Enforcer"
+        ],
+        "attack": 4,
+        "defense": 3,
+        "cost": "jjjj"
+    },
+    {
+        "name": "Morokei, Dragon Priest",
+        "types": [
+            " Dragon Priest",
+            " Undead"
+        ],
+        "attack": 5,
+        "defense": 7,
+        "cost": "bbjjjnr"
+    },
+    {
+        "name": "Harkon's Sword",
+        "types": [
+            " Weapon",
+            " Vampire",
+            " Legendary"
+        ],
+        "attack": 4,
+        "defense": 0,
+        "cost": "bjnrrrv"
+    },
+    {
+        "name": "Arngeir",
+        "types": [
+            " Greybeard",
+            " Mentor"
+        ],
+        "attack": 2,
+        "defense": 5,
+        "cost": "bjnv"
+    },
+    {
+        "name": "Erandur's Staff",
+        "types": [
+            " Staff",
+            " Dreamwalker"
+        ],
+        "attack": 0,
+        "defense": 2,
+        "cost": "rrv"
+    },
+    {
+        "name": "Karliah's Armor",
+        "types": [
+            " Armor",
+            " Nightingale",
+            " Legendary"
+        ],
+        "attack": 0,
+        "defense": 3,
+        "cost": "jjnrr"
+    },
+    {
+        "name": "Dawnguard Hunter",
+        "types": [
+            " Nord",
+            " Vampire Hunter",
+            " Dawnguard"
+        ],
+        "attack": 3,
+        "defense": 2,
+        "cost": "vvv"
+    },
+    {
+        "name": "Molag Bal's Mace",
+        "types": [
+            " Daedric Artifact",
+            " Legendary"
+        ],
+        "attack": 5,
+        "defense": 0,
+        "cost": "bbbbjrvv"
+    },
+    {
+        "name": "Uthgerd the Unbroken",
+        "types": [
+            " Nord",
+            " Warrior",
+            " Mercenary"
+        ],
+        "attack": 6,
+        "defense": 6,
+        "cost": "rrrrvv"
+    },
+    {
+        "name": "Meridia, Daedric Prince of Life",
+        "types": [
+            " Daedra",
+            " Beacon of Light"
+        ],
+        "attack": 8,
+        "defense": 7,
+        "cost": "bjjjnrrrv"
+    },
+    {
+        "name": "Kharjo",
+        "types": [
+            " Khajiit",
+            " Caravan Guard"
+        ],
+        "attack": 3,
+        "defense": 5,
+        "cost": "jjnn"
+    },
+    {
+        "name": "Sven",
+        "types": [
+            " Nord",
+            " Bard",
+            " Troubadour"
+        ],
+        "attack": 2,
+        "defense": 2,
+        "cost": "nn"
+    },
+    {
+        "name": "Vorstag",
+        "types": [
+            " Nord",
+            " Mercenary",
+            " Bodyguard"
+        ],
+        "attack": 4,
+        "defense": 6,
+        "cost": "jnrrv"
+    },
+    {
+        "name": "Ysgramor",
+        "types": [
+            " Nord",
+            " Ancient Hero"
+        ],
+        "attack": 8,
+        "defense": 8,
+        "cost": "bbjnrrrvv"
+    },
+    {
+        "name": "Azura, Daedric Prince of Dusk and Dawn",
+        "types": [
+            " Daedra",
+            " Prophecy"
+        ],
+        "attack": 6,
+        "defense": 6,
+        "cost": "bjjnnrvv"
+    },
+    {
+        "name": "Thieves Guild Recruiter",
+        "types": [
+            " Bosmer",
+            " Thief",
+            " Recruiter"
+        ],
+        "attack": 2,
+        "defense": 3,
+        "cost": "brr"
+    },
+    {
+        "name": "Vampire Thrall",
+        "types": [
+            " Vampire",
+            " Servant"
+        ],
+        "attack": 1,
+        "defense": 1,
+        "cost": "r"
+    },
+    {
+        "name": "Dwarven Centurion",
+        "types": [
+            " Dwemer",
+            " Automaton"
+        ],
+        "attack": 6,
+        "defense": 8,
+        "cost": "bjnnrrv"
+    },
+    {
+        "name": "Grelod the Kind",
+        "types": [
+            " Imperial",
+            " Cruel Matron"
+        ],
+        "attack": 1,
+        "defense": 4,
+        "cost": "bb"
+    },
+    {
+        "name": "Alduin's Wall",
+        "types": [
+            " Ancient Relic",
+            " Dragon Artifact"
+        ],
+        "attack": 0,
+        "defense": 0,
+        "cost": "bjnrrr"
+    },
+    {
+        "name": "Ma'iq the Liar",
+        "types": [
+            " Khajiit",
+            " Wanderer"
+        ],
+        "attack": 1,
+        "defense": 1,
+        "cost": "b"
+    },
+    {
+        "name": "Draugr Deathlord",
+        "types": [
+            " Undead",
+            " Draugr"
+        ],
+        "attack": 5,
+        "defense": 7,
+        "cost": "bnvvvv"
+    },
+    {
+        "name": "Jorrvaskr",
+        "types": [
+            " Nord",
+            " Companions' Hall"
+        ],
+        "attack": 0,
+        "defense": 6,
+        "cost": "bnnv"
+    },
+    {
+        "name": "Orcish Blacksmith",
+        "types": [
+            " Orc",
+            " Smith",
+            " Craftsman"
+        ],
+        "attack": 2,
+        "defense": 4,
+        "cost": "nnv"
+    },
+    {
+        "name": "Hagraven",
+        "types": [
+            " Hag",
+            " Witch"
+        ],
+        "attack": 4,
+        "defense": 3,
+        "cost": "bjnv"
+    },
+    {
+        "name": "Mudcrab Merchant",
+        "types": [
+            " Creature",
+            " Merchant"
+        ],
+        "attack": 0,
+        "defense": 2,
+        "cost": "bv"
+    },
+    {
+        "name": "Falmer Skulker",
+        "types": [
+            " Snow Elf",
+            " Ambusher"
+        ],
+        "attack": 3,
+        "defense": 2,
+        "cost": "bnv"
+    },
+    {
+        "name": "Malacath, Daedric Prince of Outcasts",
+        "types": [
+            " Daedra",
+            " Patron"
+        ],
+        "attack": 7,
+        "defense": 7,
+        "cost": "bjnnnnnv"
+    },
+    {
+        "name": "Emperor Titus Mede II",
+        "types": [
+            " Imperial",
+            " Emperor"
+        ],
+        "attack": 5,
+        "defense": 9,
+        "cost": "bjjjjjnrv"
+    },
+    {
+        "name": "Sailor of Windhelm",
+        "types": [
+            " Nord",
+            " Sailor",
+            " Explorer"
+        ],
+        "attack": 2,
+        "defense": 3,
+        "cost": "jjj"
+    },
+    {
+        "name": "Spriggan Earth Mother",
+        "types": [
+            " Spriggan",
+            " Nature's Guardian"
+        ],
+        "attack": 4,
+        "defense": 5,
+        "cost": "jjjvv"
+    },
+    {
+        "name": "Falmer Nightprowler",
+        "types": [
+            " Snow Elf",
+            " Rogue"
+        ],
+        "attack": 5,
+        "defense": 3,
+        "cost": "bbbrr"
+    },
+    {
+        "name": "Hircine, Daedric Prince of the Hunt",
+        "types": [
+            " Daedra",
+            " Huntsman"
+        ],
+        "attack": 8,
+        "defense": 6,
+        "cost": "bbjjnnrrv"
+    },
+    {
+        "name": "Mzinchaleft Gate",
+        "types": [
+            " Dwemer Ruins",
+            " Dwemer Artifact"
+        ],
+        "attack": 0,
+        "defense": 4,
+        "cost": "bjnr"
+    },
+    {
+        "name": "Gaius Maro",
+        "types": [
+            " Imperial",
+            " Penitus Oculatus"
+        ],
+        "attack": 3,
+        "defense": 4,
+        "cost": "nnnr"
+    },
+    {
+        "name": "Dremora Valkynaz",
+        "types": [
+            " Daedra",
+            " Dremora"
+        ],
+        "attack": 6,
+        "defense": 6,
+        "cost": "bbbnnnr"
+    },
+    {
+        "name": "Imperial Legionnaire",
+        "types": [
+            " Imperial",
+            " Soldier"
+        ],
+        "attack": 2,
+        "defense": 5,
+        "cost": "jnrr"
+    },
+    {
+        "name": "Thalmor Wizard",
+        "types": [
+            " High Elf",
+            " Thalmor",
+            " Mage"
+        ],
+        "attack": 4,
+        "defense": 3,
+        "cost": "nrvv"
+    },
+    {
+        "name": "Dawnguard Sentry",
+        "types": [
+            " Nord",
+            " Vampire Hunter",
+            " Dawnguard"
+        ],
+        "attack": 4,
+        "defense": 4,
+        "cost": "bbvvv"
+    },
+    {
+        "name": "Rieklings",
+        "types": [
+            " Goblin",
+            " Tribe"
+        ],
+        "attack": 2,
+        "defense": 2,
+        "cost": "bb"
+    },
+    {
+        "name": "Tolfdir",
+        "types": [
+            " Nord",
+            " Mage",
+            " College of Winterhold"
+        ],
+        "attack": 3,
+        "defense": 6,
+        "cost": "jjjnr"
+    },
+    {
+        "name": "Peryite, Daedric Prince of Pestilence",
+        "types": [
+            " Daedra",
+            " Lord of Plagues"
+        ],
+        "attack": 7,
+        "defense": 5,
+        "cost": "bjjjjnnn"
+    },
+    {
+        "name": "Alik'r Survivalist",
+        "types": [
+            " Redguard",
+            " Nomad",
+            " Desert Dweller"
+        ],
+        "attack": 3,
+        "defense": 3,
+        "cost": "rrr"
+    },
+    {
+        "name": "Ancient Vampire",
+        "types": [
+            " Vampire",
+            " Elder"
+        ],
+        "attack": 7,
+        "defense": 6,
+        "cost": "bbjjnnrv"
+    },
+    {
+        "name": "Barenziah",
+        "types": [
+            " Dark Elf",
+            " Queen",
+            " Agent"
+        ],
+        "attack": 6,
+        "defense": 7,
+        "cost": "bbbbbnvv"
+    },
+    {
+        "name": "Skyforge",
+        "types": [
+            " Forge",
+            " Legendary Weapon"
+        ],
+        "attack": 0,
+        "defense": 0,
+        "cost": "bbbbbj"
+    },
+    {
+        "name": "Knight of the Nine",
+        "types": [
+            " Imperial",
+            " Divine Crusader"
+        ],
+        "attack": 8,
+        "defense": 8,
+        "cost": "bbbbbbbjrv"
+    },
+    {
+        "name": "Oghma Infinium",
+        "types": [
+            " Daedric Artifact",
+            " Ancient Knowledge"
+        ],
+        "attack": 0,
+        "defense": 0,
+        "cost": "bbjjnrv"
+    },
+    {
+        "name": "Vampire Lord",
+        "types": [
+            " Vampire",
+            " Ancient"
+        ],
+        "attack": 8,
+        "defense": 8,
+        "cost": "bbbjrrvvv"
+    },
+    {
+        "name": "The Eye of Magnus",
+        "types": [
+            " Artifact",
+            " Magical Orb"
+        ],
+        "attack": 0,
+        "defense": 0,
+        "cost": "bbbbjjnrvv"
+    }
+]

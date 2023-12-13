@@ -6,7 +6,7 @@ Another team of developers will take care of implementing the game rules and the
 
 
 ### Requirements
-python>=3.11.6
+python>=3.11.6  
 node.js>=20.0.9
 
 
@@ -26,6 +26,12 @@ node.js>=20.0.9
 
 4. Execute the initial SQL schema
     > flask schema
+
+5. Load the cards from json-preset into the database (Optional)
+    > flask load {preset-name}
+
+    Available presets:
+        - tes
 
 5. Run the development server
     > flask run

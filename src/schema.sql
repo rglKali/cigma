@@ -30,7 +30,6 @@ CREATE TABLE userCards (
 CREATE TABLE decks (
     deck_id SERIAL PRIMARY KEY,
     deck_name VARCHAR(50) NOT NULL,
-    deck_desc TEXT,
     user_id INT NOT NULL,
     deck_version INT
 );
