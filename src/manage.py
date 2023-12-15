@@ -8,9 +8,16 @@ def build_command():
     """Builds vite frontend"""
     import os
 
-    os.chdir("src/vite")
-    os.system("yarn")
-    os.system("yarn build")
+    interface = os.environ.get('INTERFACE')
+    match interface:
+        case 'vite':
+            os.chdir("src/vite")
+            os.system("yarn")
+            os.system("yarn build")
+        case 'flet':
+            os.system("flet publish src/flet/main.py")
+        case _:
+            print('Unknown interface')
 
 
 @click.command("schema")
@@ -44,8 +51,8 @@ def preset_command(name: str):
 
     with connect() as conn:
         with conn.cursor() as cur:
-            for item in json.load(open(f'data/{name}.json')):
+            for item in json.load(open(f'data/presets/{name}.json')):
                 cur.execute(sql, (item['name'], "{" + ",".join("'" + t + "'" for t in item['types']) + "}", item['cost'], item['attack'], item['defense']))
             conn.commit()
 
-    print(f'Cards from {name} preset loaded')
+    print(f'Cards from preset "{name}" loaded')

@@ -1,6 +1,7 @@
 from flask import jsonify, request, make_response
 
 from src.api.auth.controllers import register_new_user, login_user
+from src.api.auth.utils import token_required
 from src.api.auth.errors import UserExists, UserDoesNotExist, InvalidPassword
 
 
@@ -36,12 +37,17 @@ def login():
     except InvalidPassword:
         return jsonify({'error': 'Invalid credentials'}), 401
 
-    response = make_response(jsonify({'message': 'Logged in successfully'}))
+    response = make_response(jsonify({'message': 'Logged in successfully', 'token': token['token']}))
     response.set_cookie('token', token['token'], expires=token['exp'], httponly=True)
-    return response, 200
+    return {'message': 'Logged in successfully'}, 200
+
+
+@token_required
+def check(user):
+    return jsonify({'message': 'ok'})
 
 
 def logout():
     response = make_response(jsonify({'message': 'Logged out successfully'}))
     response.set_cookie('token', '', expires=0)
-    return response
+    return response, 200
