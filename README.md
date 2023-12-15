@@ -10,17 +10,18 @@ node.js~=20.0.9
 
 
 ### Code structure
-|-- data/               <- Project data
-|-- src/                <- Source files
-    |-- api/            <- REST backend sources (Flask)
-    |-- vite/           <- Vite Frontend sources (React)
-    |-- __init__.py     <- Flask factory
-    |-- manage.py       <- Flask CLI
-    |-- schema.sql      <- Initial SQL schema
-|-- .env                <- Project environment
-|-- .gitignore          <- ignore files set
-|-- LICENSE             <- MIT License
-|-- README.md           <- Project README
+|-- data/               <- Project data  
+|-- src/                <- Source files  
+    |-- api/            <- REST backend sources (Flask)  
+    |-- vite/           <- Vite Frontend sources (React)  
+    |-- flet/           <- Flet Frontend sources (Flutter)  
+    |-- __init__.py     <- Flask factory  
+    |-- manage.py       <- Flask CLI  
+    |-- schema.sql      <- Initial SQL schema  
+|-- .env                <- Project environment  
+|-- .gitignore          <- ignore files set  
+|-- LICENSE             <- MIT License  
+|-- README.md           <- Project README  
 
 
 ### Installation
