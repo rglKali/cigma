@@ -1,5 +1,19 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-DROP TABLE IF EXISTS users, user_sessions, cards, user_cards, decks, deck_cards, mods, mod_actions, mod_votes, games CASCADE;
+DROP TABLE IF EXISTS 
+    users, 
+    cards, 
+    user_cards, 
+    types,
+    card_types,
+    elems,
+    card_elems,
+    decks, 
+    deck_cards, 
+    mods, 
+    mod_actions, 
+    mod_votes, 
+    games 
+CASCADE;
 
 
 CREATE TABLE users (
@@ -10,19 +24,39 @@ CREATE TABLE users (
     uav INT DEFAULT 20
 );
 
-CREATE TABLE friends (
-    friend_1 UUID REFERENCES users(id),
-    friend_2 UUID REFERENCES users(id),
-    PRIMARY KEY (friend_1, friend2)
-)
-
 CREATE TABLE cards (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name VARCHAR(255) NOT NULL,
-    types VARCHAR(255)[],
+    lore TEXT,
     cost VARCHAR(255),
     attack INT NOT NULL,
     defense INT NOT NULL
+);
+
+CREATE TABLE types (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name VARCHAR(255) NOT NULL,
+    lore TEXT
+);
+
+CREATE TABLE card_types (
+    card_id UUID REFERENCES cards(id),
+    type_id UUID REFERENCES types(id),
+    PRIMARY KEY (card_id, type_id)
+);
+
+CREATE TABLE elems (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name VARCHAR(255),
+    color VARCHAR(255),
+    lore TEXT
+);
+
+CREATE TABLE card_elems (
+    card_id UUID REFERENCES cards(id),
+    elem_id UUID REFERENCES types(id),
+    amount INT NOT NULL,
+    PRIMARY KEY (card_id, elem_id)
 );
 
 CREATE TABLE user_cards (
@@ -67,8 +101,7 @@ CREATE TABLE mod_votes (
 
 CREATE TABLE games (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    deck_1_id UUID REFERENCES decks(id),
-    deck_2_id UUID REFERENCES decks(id),
-    player_1_won BOOLEAN NOT NULL,
+    winner_id UUID REFERENCES decks(id),
+    looser_id UUID REFERENCES decks(id),
     played_at TIMESTAMP DEFAULT NOW()
 );

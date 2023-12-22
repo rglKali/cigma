@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
 import NavBar from './components/NavBar'
-import { HomePage, ProfilePage } from "./pages";
+import { CardsPage, HomePage, ProfilePage } from "./pages";
 
 const App = () => {
 	const [ page, setPage ] = useState<string>('Home')
@@ -12,6 +12,7 @@ const App = () => {
 		switch (page) {
 			case 'Home': return <HomePage/>
 			case 'Profile': return <ProfilePage/>
+			case 'Cards': return <CardsPage/>
 		}
 		return <></>
 	}

@@ -1,12 +1,43 @@
-### Cigma Online
-Your customers are the creators of Cigma, a collectible card game. They want to create an online version of their game. In a game of Cigma, two players compete against each other with packs of cards, called decks, which they have each prepared separately. Creating your own deck from your card collection is an integral part of the gaming experience.
+## Cigma Online
+The Final Project on my BDD course on S3 in Gustave Eiffel University.
+Technology stack I had to work with was Flask and Psycopg2.
 
-Another team of developers will take care of implementing the game rules and the interface for playing. You will have to take care of the management of card collections, the history of games played, the creation and storage of decks and social features (sharing decks, suggesting modifications to other people's decks, etc.)
+
+### Core features:
+1. RPC backend, implemented with flask & psycopg2
+    - A single endpoint to serve all types of requests
+    - Universal interface for all the requests, processed by backend
+    - Full error handling coverage. All possible errors are covered with appropriate HTML error codes
+    - Custom Flask cli commands to build fronted or execute schema
+    - A single entry point for both RPC-Backend [POST] and SPA-Frontend [GET]
+
+2. SQL database, built with PostgreSQL
+    - Tables represent all the game data
+    - Views represent statistics for cards, decks, etc..
+    - Functions abstract complex querries from Python, like Many-to-Many relation querriyng
+    - Initial execution from file (default to schema.sql, but may be configered via cli argument)
+    - Support for JSON-serialized presets for cards, types and elems
+
+2. SPA frontend, implemented with React, TypeScript & Material UI
+    - Custom api connector to interract with an RPC server
+    - Various custom hooks and contexts
+    - Pre-built light and dark themes, default to system
+    - localStorage utilisation for handling jwt token and cache game data
+
+3. JWT-based authorization
+    - Imeplemented from scratch (no 3rd party libs) using hashlib, hmac and base64
+    - Fully stateless (requires no backend session management)
+    - Automatically expires in a week (but may be changed by the env variable)
+
+4. ENV-based config
+    - All the sensitive information is stored in the environment variables
+    - No hardcoding for global any type of variables
 
 
 ### Requirements
-python~=3.11.6  
-node.js~=20.0.9
+Python~=3.11.6  
+Node.js~=20.0.9  
+PostgreSQL~=16.1  
 
 
 ### Code structure
@@ -15,9 +46,9 @@ node.js~=20.0.9
 |-- vite/               <- Frontend sources  
 |-- main.py             <- Main program script  
 |-- db.py               <- DB connector  
+|-- jwt.py              <- JWT codecs  
 |-- schema.sql          <- Initial SQL schema    
-|-- .env                <- Project environment  
-|-- .gitignore          <- ignore files set 
+|-- .environ            <- Project environment  
 |-- requirements.txt    <- Dependencies  
 |-- LICENSE             <- MIT License  
 |-- README.md           <- Project README  
@@ -25,14 +56,14 @@ node.js~=20.0.9
 
 ### Installation
 1. Create virtual environment (Optional)
-    > python -m venv venv
+    > python -m venv venv  
     > source venv/bin/activate
 
 2. Install dependencies
     > pip install -r requirements.txt
 
-3. Initialize the [env](.env)
-    > source .env
+3. Initialize the [environment](.environ)
+    > source .environ
 
 3. Build the frontend interface
     > flask build
@@ -44,7 +75,7 @@ node.js~=20.0.9
     > flask preset {name}
 
     Available presets:
-    - tes
+    - tes (default)
 
 5. Run the development server
     > flask run

@@ -15,10 +15,10 @@ class Response(TypedDict):
     data: Optional[Data]
 
 
-def me(caller: str) -> Response:
+def me(user: str | None, data=None) -> Response:
     with connect() as conn:
         with conn.cursor() as cur:
-            cur.execute(q.GET_USER_BY_ID, (caller,))
+            cur.execute(q.GET_USER_BY_ID, (user,))
             user = cur.fetchone()
             if user:
                 return {'code': 200, 'data': user['name']}

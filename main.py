@@ -1,14 +1,14 @@
 import os
-import json
 import click
-from db import connect
 from flask import Flask, request, abort, jsonify
 from typing import TypedDict, Optional, Any
+from db import connect
 import controllers
+import jwt
 
 
 class RequestInterface(TypedDict):
-    caller: Optional[str]
+    token: Optional[str]
     op: str
     data: Optional[Any]
 
@@ -28,13 +28,24 @@ app = Flask(__name__, static_folder='vite/dist', static_url_path='')
 # @typechecked
 def process(data: RequestInterface) -> ResponseInterface:
     op = data.pop('op')
-    controller = getattr(controllers, op, None)
 
+    controller = getattr(controllers, op, None)
     if controller is None:
         return {'error': 'Unknown operation', 'code': 404}
 
+    token = data.pop('token')
+    if token is not None:
+        try:
+            user = jwt.decode(token, app.secret_key)
+        except jwt.JWTException as err:
+            return {'error': str(err), 'code': 401}
+        except Exception as err:
+            {'error': str(err), 'code': 500}
+    else:
+        user = None
+
     try:
-        return controller(**data)
+        return controller(user, data.get('data'))
     except TypeError as err:
         return {'error': str(err), 'code': 400}
     except Exception as err:
@@ -45,35 +56,36 @@ def process(data: RequestInterface) -> ResponseInterface:
 @app.cli.command('build')
 def build_command():
     """This is a command to build a frontend interface"""
-    os.chdir('static')
+    os.chdir('vite')
     os.system('yarn build')
 
 
 @app.cli.command('schema')
-def schema_command():
+@click.argument('path', default='schema.sql')
+def schema_command(path: str):
     """This is a command to set up an empty database"""
     # Read the schema file
-    with open('schema.sql', 'r') as file:
-        schema = file.read()
-
-    with connect() as conn:
-        with conn.cursor() as cur:
-            cur.execute(schema)
-            conn.commit()
+    if os.path.exists(path):
+        app.logger.info(f'Reading schema from [{path}]')
+        with open(path, 'r') as file:
+            schema = file.read()
+        app.logger.info('Executing schema')
+        try:
+            with connect() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(schema)
+                    conn.commit()
+            app.logger.info('Success')
+        except Exception as e:
+            app.logger.error(e)
+    else:
+        app.logger.error(f'File [{path}] not found')
 
 
 @app.cli.command('preset')
-@click.argument('name')
+@click.argument('name', default='tes.json')
 def preset_command(name: str):
-    sql = "INSERT INTO cards (name, types, cost, attack, defense) VALUES (%s, %s, %s, %s, %s)"
-
-    with connect() as conn:
-        with conn.cursor() as cur:
-            for item in json.load(open(f'presets/{name}.json')):
-                cur.execute(sql, (item['name'], "{" + ",".join("'" + t + "'" for t in item['types']) + "}", item['cost'], item['attack'], item['defense']))
-            conn.commit()
-
-    print(f'Cards from preset "{name}" loaded')
+    print(name)
 
 
 # Register a single endpoint for serving both SPA Frontend and JSON-RPC Backend
@@ -90,4 +102,5 @@ def route():
 
 
 if __name__ == '__main__':
+    app.logger.warning('Direct launching may cause unexpected behaviour. Consider using "flask run"')
     app.run()

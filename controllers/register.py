@@ -2,6 +2,7 @@ from werkzeug.security import generate_password_hash
 from typing import TypedDict, Optional
 from db import connect
 import querries as q
+import jwt
 
 
 class Request(TypedDict):
@@ -22,7 +23,7 @@ class Response(TypedDict):
     data: Optional[Data]
 
 
-def register(data: Request) -> Response:
+def register(user: str | None, data: Request) -> Response:
     with connect() as conn:
         with conn.cursor() as cur:
             cur.execute(q.GET_USER_BY_EMAIL, (data['email'],))
@@ -33,4 +34,4 @@ def register(data: Request) -> Response:
                 cur.execute(q.REGISTER_NEW_USER, (data['email'], data['username'], hashed_password))
                 user = cur.fetchone()
                 conn.commit()
-                return {'message': 'Registration Successful', 'code': 201, 'data': {'id': user['id'], 'user': user['name']}}
+                return {'message': 'Registration Successful', 'code': 201, 'data': {'jwt': jwt.encode(user['id'])}}

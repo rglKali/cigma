@@ -2,6 +2,7 @@ from werkzeug.security import check_password_hash
 from typing import TypedDict, Optional
 from db import connect
 import querries as q
+import jwt
 
 
 class Request(TypedDict):
@@ -21,13 +22,13 @@ class Response(TypedDict):
     data: Optional[Data]
 
 
-def login(data: Request) -> Response:
+def login(user: str | None, data: Request) -> Response:
     with connect() as conn:
         with conn.cursor() as cur:
             cur.execute(q.GET_USER_BY_EMAIL, (data['email'],))
             user = cur.fetchone()
             if user:
                 if check_password_hash(user['password'], data['password']):
-                    return {'message': 'Log in successful', 'code': 200, 'data': {'id': user['id'], 'user': user['name']}}
+                    return {'message': 'Log in successful', 'code': 200, 'data': {'jwt': jwt.encode(user['id'])}}
                 return {'error': 'Invalid credentials', 'code': 401}
             return {'error': 'User not found', 'code': 404}

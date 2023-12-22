@@ -9,4 +9,4 @@ export DB_DATABASE=cigma
 export DB_USERNAME=kali
 export DB_PASSWORD=kali
 
-export INTERFACE=vite
+export JWT_EXPIRATION=604800

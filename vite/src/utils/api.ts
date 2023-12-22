@@ -1,14 +1,14 @@
 export type Request = {
-    caller?: string | null
-    op: string
-    data?: any
+  caller?: string | null
+  op: string
+  data?: any
 }
 
 export type Response = {
-    code: number
-    message?: string
-    error?: string
-    data?: any
+  code: number
+  message?: string
+  error?: string
+  data?: any
 }
 
 export default async ({caller, op, data}: Request): Promise<Response> => {
