@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { AuthProvider, ThemeProvider } from './providers/index.ts'
 import App from './App.tsx'
-import { ThemeProvider, AuthProvider } from './providers'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <App/>
+      </ThemeProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )

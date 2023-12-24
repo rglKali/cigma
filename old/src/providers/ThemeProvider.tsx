@@ -1,6 +1,6 @@
 import React, { useState, ReactNode, useMemo } from 'react';
 import { createTheme, useMediaQuery, CssBaseline, ThemeProvider as Provider } from '@mui/material';
-import ThemeContext from '../context/themeContext'
+import ThemeContext from '../context/ThemeContext';
 
 
 export type ThemeProviderProps = {

@@ -1,26 +1,36 @@
 import React, { useEffect, useState, useRef } from 'react';
 import * as d3 from 'd3';
 import { Button } from '@mui/material';
-import { useTheme } from '../hooks';
 
 type Point = [number, number];
 
+const record2array = (record: Record<string, number>): string[] => {
+  const resultArray: string[] = [];
+  for (const [key, value] of Object.entries(record)) {
+    for (let i = 0; i < value; i++) {
+      resultArray.push(key);
+    }
+  }
+  return resultArray;
+}
+
 export type VoronoiProps = {
-  colors: Array<string>
+  colors: Record<string, number>
 }
 
 const Voronoi: React.FC<VoronoiProps> = ({ colors }): JSX.Element => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [toggler, toggle] = useState<boolean>(false)
-  const { theme } = useTheme()
 
   useEffect(() => {
     if (!colors) return;
 
+    const htmlColors = record2array(colors)
+
     const width = 200; // Set your desired width for the SVG
     const height = 200; // Set your desired height for the SVG
 
-    const points: Point[] = colors.map(() => ([Math.random() * width, Math.random() * height]));
+    const points: Point[] = htmlColors.map(() => ([Math.random() * width, Math.random() * height]));
 
     const svg = d3.select(svgRef.current);
 
@@ -36,10 +46,10 @@ const Voronoi: React.FC<VoronoiProps> = ({ colors }): JSX.Element => {
       .data(voronoi.cellPolygons())
       .join('path')
       .attr('d', d => `M${d.join('L')}Z`)
-      .attr('fill', (_, i) => colors[i])
-      .attr('stroke', theme == 'light' ? 'black' : 'white');
+      .attr('fill', (_, i) => htmlColors[i])
+      .attr('stroke', 'black');
 
-  }, [colors, toggler, theme]);
+  }, [colors, toggler]);
 
   return <Button onClick={() => toggle(!toggler)}><svg ref={svgRef}></svg></Button>
 };

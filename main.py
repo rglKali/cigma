@@ -1,4 +1,5 @@
 import os
+import json
 import click
 from flask import Flask, request, abort, jsonify
 from typing import TypedDict, Optional, Any
@@ -16,7 +17,6 @@ class RequestInterface(TypedDict):
 class ResponseInterface(TypedDict):
     status: int
     message: Optional[str]
-    error: Optional[str]
     data: Optional[Any]
 
 
@@ -31,25 +31,26 @@ def process(data: RequestInterface) -> ResponseInterface:
 
     controller = getattr(controllers, op, None)
     if controller is None:
-        return {'error': 'Unknown operation', 'code': 404}
+        return {'message': 'Unknown operation', 'status': 404}
 
-    token = data.pop('token')
-    if token is not None:
+    user = None
+    try:
+        token = data.pop('token')
         try:
-            user = jwt.decode(token, app.secret_key)
+            user = jwt.decode(token, os.environ.get('FLASK_SECRET_KEY'))
         except jwt.JWTException as err:
-            return {'error': str(err), 'code': 401}
+            return {'message': str(err), 'status': 401}
         except Exception as err:
-            {'error': str(err), 'code': 500}
-    else:
-        user = None
+            return {'message': str(err), 'status': 500}
+    except KeyError:
+        pass
 
     try:
         return controller(user, data.get('data'))
     except TypeError as err:
-        return {'error': str(err), 'code': 400}
+        return {'message': str(err), 'status': 400}
     except Exception as err:
-        return {'error': str(err), 'code': 500}
+        return {'message': str(err), 'status': 500}
 
 
 # Registering cli commands
@@ -57,6 +58,7 @@ def process(data: RequestInterface) -> ResponseInterface:
 def build_command():
     """This is a command to build a frontend interface"""
     os.chdir('vite')
+    os.system('yarn')
     os.system('yarn build')
 
 
@@ -83,8 +85,21 @@ def schema_command(path: str):
 
 
 @app.cli.command('preset')
-@click.argument('name', default='tes.json')
+@click.argument('name', default='tes')
 def preset_command(name: str):
+    # Prepare the SQL query
+    sql = "INSERT INTO cards (name, attack, defense, types, manas) VALUES (%s, %s, %s, %s, %s)"
+    with connect() as conn:
+        with conn.cursor() as cur:
+            for item in json.load(open(f'presets/{name}.json')):
+                cur.execute(sql, (
+                    item['name'], item['attack'], item['defense'], 
+                    "{" + ",".join(t for t in item['types']) + "}", 
+                    "{" + ",".join(t for t in item['manas']) + "}", 
+                ))
+            conn.commit()
+
+    print(f'Cards from preset "{name}" loaded')
     print(name)
 
 
@@ -96,7 +111,8 @@ def route():
             return app.send_static_file('index.html')
         case 'POST':
             response = process(request.get_json())
-            return jsonify(response), response['code']
+            status = response.pop('status')
+            return jsonify(response), status
         case _:
             abort(405)
 
